@@ -158,6 +158,81 @@ jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":
                     <div class="desc" style="display: none;">Participating Institutions</div>
                     <div class="desc" style="display: none;">Software</div>
                 </div>-->
+                <div>
+                    <h2>Juxta-cl</h2>
+                    Juxta-cl
+                    ========
+                    
+                    Forked version of the Juxta Command Line tool created for eMOP by Performant Software Solutions. Will be official after eMOP is complete (10/1/14).
+                    
+                    Juxta-CL is available open-source for use under the Apache Software License, v2.0.
+                    
+                    +
+                    +
+                    ===============================================================================
+                    Juxta Command Line (Juxta CL)
+                    ===============================================================================
+                    
+                    Synopsis
+                    --------
+                    
+                    JuxtaCL is a specialized form of Juxta. It is a command-line tool that accepts
+                    the path to two files a parameters. It will collate them and return their
+                    change index (degree of difference between the two files).
+                    
+                    Requirements
+                    ------------
+                    Java 1.6+
+                    Maven 3.x
+                    
+                    Build
+                    -----
+                    JuxtaCL is built by maven. Execute: mvn package
+                    
+                    Usage
+                    -----
+                    Once built, the binary distribution can be found in the target directory.
+                    It will be named: juxta-{version}-bin.tar.gz.
+                    Expand this archive and move into the top level directory. It contains
+                    a script for launching JuxtaCL named juxta.sh. It accepts the following
+                    command line arguments:
+                    
+                    -help                   - displays usage information
+                    -version                - prints the JuxtaCL version
+                    -strip <file>           - takes one XML file and strips out the tag content.
+                        This content is streamed to std:out
+                        -diff <a> <b> [options] - <a> and <b> are the two files to compare. [options]
+                            is the set of config options for the comparison.
+                            
+                            Valid options include:
+                            
+                            [+|-]case                     - toggles case
+                            sensitivity.
+                            Default: insensitive
+                            
+                            [+|-]punct                    - toggles punctuation
+                            sensitivity
+                            Default: insensitive
+                            
+                            -hyphen [all|linebreak|none]  - sets hyphenation handling
+                            Default: all
+                            
+                            -algorithm                    - set the algorithm used
+                            [ juxta |                      to determine percent
+                            levenshtein |                differnece betweenn the
+                            jaro_winkler |               files. Defaults to juxta.
+                            dice_sorensen ]
+                            
+                            Also included in the final package are helper scrips; strip.sh. diff.sh and all.sh.
+                            
+                            strip.sh takes one XML file as a parameter. Flat text is dumped to std:out
+                            
+                            diff.sh takes 2 files. The change index (as calculated with Juxta algorigthm) is returned.
+                            The -algorithm paramter is also accepted.
+                            
+                            all.sh takes 2 file parameters. It will return a table of change indexes, one
+                            row for each algorithm.
+                </div>
             </div>
         
             <div class="paging">
